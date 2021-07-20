@@ -1,0 +1,53 @@
+.container {
+  width: max-content;
+  padding: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.header {
+  text-align: center;
+  padding: 12px 0;
+  margin-bottom: 8px;
+  background-color: lightpink;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: 50px;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.dates {
+  display: inline-grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: repeat(6, 50px);
+  gap: 0 8px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.dates > div {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lastMonthDates,
+.nextMonthDates {
+  color: gray;
+}
