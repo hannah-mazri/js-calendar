@@ -4,7 +4,8 @@
 
 `new Date(year, monthIndex, date).getDate()` returns the date of given value. If `date` = 0, it will return the last date of previous month (can be used to get total days in a month).
 
-`new Date(year, monthIndex, date).getDate()` in action:
+
+See `new Date(year, monthIndex, date).getDate()` in action:
 ```
 new Date(2021, 2, 1)
 // output: Mon Mar 01 2021 00:00:00 GMT+0800 (Malaysia Time)
