@@ -13,35 +13,33 @@ const months = [
   'December',
 ];
 
-const days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
-
 const date = new Date();
-date.setMonth(1);
 
 const currentYear = date.getFullYear();
 
-const lastDateOfPreviousMonth = date.getDate();
-const lastDayOfPreviousMonth = date.getDay();
+const previousMonthIndex = date.getMonth() - 1;
+const currentMonthIndex = date.getMonth();
+const nextMonthIndex = date.getMonth() + 1;
 
-const previousMonth = date.getMonth() - 1;
-const currentMonth = date.getMonth();
-const nextMonth = date.getMonth() + 1;
+const indexOfFirstDayInCurrentMonth = new Date(
+  currentYear,
+  currentMonthIndex,
+  1
+).getDay();
 
-const firstDayInCurrentMonth = new Date(currentYear, currentMonth, 1).getDay();
-
-const totalDaysInPreviousMonth = new Date(2021, previousMonth + 1, 0).getDate();
-const totalDaysInCurrentMonth = new Date(2021, currentMonth + 1, 0).getDate();
+const totalDaysInPreviousMonth = new Date(
+  2021,
+  previousMonthIndex + 1,
+  0
+).getDate();
+const totalDaysInCurrentMonth = new Date(
+  2021,
+  currentMonthIndex + 1,
+  0
+).getDate();
 
 const header = document.querySelector('.header');
-header.innerText = `${months[currentMonth]} ${currentYear}`;
+header.innerText = `${months[currentMonthIndex]} ${currentYear}`;
 
 const dates = document.querySelector('.dates');
 const child = document.createElement('div');
@@ -51,9 +49,9 @@ const lastMonthDates = [];
 const currentMonthDates = [];
 const nextMonthDates = [];
 
-for (let i = 0; i < firstDayInCurrentMonth - 1; i++) {
+for (let i = 0; i < indexOfFirstDayInCurrentMonth - 1; i++) {
   lastMonthDates.push(
-    totalDaysInPreviousMonth - firstDayInCurrentMonth + i + 2
+    totalDaysInPreviousMonth - indexOfFirstDayInCurrentMonth + i + 2
   );
 
   const child = document.createElement('div');
