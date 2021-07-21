@@ -1,5 +1,7 @@
 # js-calendar
 
+Codepen: https://codepen.io/hannahnajwa/pen/qBmXgZm
+
 `Date.prototype.getDay()` returns index of day, in which 0 = Sunday
 
 `new Date(year, monthIndex, date).getDate()` returns the date of given value. If `date` = 0, it will return the last date of previous month (can be used to get total days in a month).
